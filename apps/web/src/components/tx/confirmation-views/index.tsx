@@ -90,7 +90,7 @@ const ConfirmationView = ({ safeTx, txPreview, txDetails, ...props }: Confirmati
   useEffect(() => {
     // If decodedDataRef.current is not null, the decoded data was rendered inside the TxData component
     setIsDecodedDataVisible(!!decodedDataRef.current)
-  }, [decodedDataRef.current])
+  }, [])
 
   const ConfirmationViewComponent = useMemo(() => {
     return details
