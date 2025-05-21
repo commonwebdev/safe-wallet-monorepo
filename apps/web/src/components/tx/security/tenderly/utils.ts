@@ -55,7 +55,7 @@ export const _getSingleTransactionPayload = async (
   ])
 
   return {
-    to: readOnlySafeContract.getAddress(),
+    to: await readOnlySafeContract.getAddress(),
     input,
   }
 }
@@ -64,10 +64,10 @@ export const _getMultiSendCallOnlyPayload = async (
   params: MultiSendTransactionSimulationParams,
 ): Promise<Pick<TenderlySimulatePayload, 'to' | 'input'>> => {
   const data = encodeMultiSendData(params.transactions)
-  const readOnlyMultiSendContract = await getReadOnlyMultiSendCallOnlyContract(params.safe.version)
+  const readOnlyMultiSendContract: any = await getReadOnlyMultiSendCallOnlyContract(params.safe.version)
 
   return {
-    to: readOnlyMultiSendContract.getAddress(),
+    to: await readOnlyMultiSendContract.getAddress(),
     input: readOnlyMultiSendContract.encode('multiSend', [data]),
   }
 }
