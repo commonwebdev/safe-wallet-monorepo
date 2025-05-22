@@ -1,8 +1,7 @@
 {
+  "installCommand": "yarn workspaces focus @safe-global/web --production",
   "buildCommand": "yarn workspace @safe-global/web build",
   "outputDirectory": "apps/web/.next",
-  "installCommand": "yarn install",
   "framework": "nextjs",
-  "ignoreCommand": "exit 1", 
   "cleanUrls": true
 }
